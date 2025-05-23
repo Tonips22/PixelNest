@@ -1,0 +1,117 @@
+---
+import '@styles/global.css';
+---
+
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<title>Orbitas</title>
+		<!-- Fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap" rel="stylesheet">
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
+
+<style>
+	:root {
+		color-scheme: light dark;
+		
+		/*Colors*/
+		--dark: #0D0D0D;
+		--white: #F5F5F5;
+		--purple: #9F7AEA;
+		--pink: #E91E63;
+		--green: #00FFC3;
+
+		/*Fonts*/
+		--primary-font: "Sora", sans-serif;
+		--secondary-font: "Inter", sans-serif;
+		--tertiary-font: "Space Mono", monospace;
+
+		.sora-<uniquifier> {
+			font-family: "Sora", sans-serif;
+			font-optical-sizing: auto;
+			font-weight: <weight>;
+			font-style: normal;
+		}
+
+		.inter-<uniquifier> {
+			font-family: "Inter", sans-serif;
+			font-optical-sizing: auto;
+			font-weight: <weight>;
+			font-style: normal;
+		}
+
+		.space-mono-regular {
+			font-family: "Space Mono", monospace;
+			font-weight: 400;
+			font-style: normal;
+		}
+
+		.space-mono-bold {
+			font-family: "Space Mono", monospace;
+			font-weight: 700;
+			font-style: normal;
+		}
+
+		.space-mono-regular-italic {
+			font-family: "Space Mono", monospace;
+			font-weight: 400;
+			font-style: italic;
+		}
+
+		.space-mono-bold-italic {
+			font-family: "Space Mono", monospace;
+			font-weight: 700;
+			font-style: italic;
+			}
+	}
+
+	* { margin: 0; padding: 0; }
+	*, *::before, *::after { box-sizing: border-box; }
+	html { font-size: 16px; scroll-behavior: smooth; scrollbar-width: none;}
+	body {
+		background-color: var(--dark);
+		color: var(--white);	
+		font-family: var(--secondary-font);
+		min-height: 100vh;
+		max-width: 1920px;
+		margin: 0 auto;
+	}
+
+	input, button, textarea, select { font: inherit; }
+	p { text-wrap: pretty; overflow-wrap: break-word; }
+	h1, h2, h3, h4, h5, h6 { text-wrap: balance; overflow-wrap: break-word; }
+	h1{ font-family: var(--primary-font); font-size: 3.2rem; }
+	img, video, svg { max-width: 100%; height: auto; }
+	a { text-decoration: none; color: inherit; }
+	ul, ol { list-style: none; }
+	*::selection {
+        background-color: var(--purple);
+        color: var(--dark);
+    }
+
+	/* @media (prefers-color-scheme: light) {
+		:root {
+			--white: #2C2C2C;
+			--dark: #F5F1EA;
+		}
+	} */
+
+	@media (prefers-reduced-motion: reduce) {
+	* { 
+		animation-duration: 0.01ms !important; 
+		animation-iteration-count: 1 !important; 
+		transition-duration: 0.01ms !important; 
+		scroll-behavior: auto !important;
+		transition: none; 
+	}
+	}
+</style>
