@@ -1,19 +1,46 @@
 ---
 ---
 
-<section class="min-h-screen relative overflow-hidden bg-dark text-white">
-    <video src="/stars.webm" playsinline loop muted autoplay class=" w-full h-screen object-cover object-center"></video>
-    <div class="absolute top-0 left-0 w-full h-full z-10 flex items-center justify-center flex-col text-center p-4 gap-4">
-        <h1 class="text-6xl font-bold max-w-3/4 bg-gradient-to-l from-white to-purple bg-clip-text text-transparent font-primary">Diseñamos universos digitales para marcas fuera de órbita</h1>
+<section class="min-h-screen relative overflow-hidden bg-dark text-white grid grid-cols-2 p-8 gap-8">
+    <main class="flex flex-col items-center justify-center gap-8 text-center">
+        <h1 class="text-6xl font-bold font-primary opacity-0">Transformamos ideas en experiencias digitales inolvidables</h1>
+        <h2 class="text-3xl font-bold font-secondary text-gray text-pretty opacity-0">Creamos landing pages que enamoran, convierten y hacen crecer tu negocio.</h2>
         <div class="flex flex-row items-center justify-center gap-4 text-lg">
-            <a href="mailto:tonnigt22@gmail.com" class=" border-2 border-white rounded-full px-4 py-2 hover:bg-green hover:border-green hover:text-dark transition-colors ease-in-out duration-200">Descubre órbitas</a>
-            <a href="#projects" class="flex items-center border-white bg-purple rounded-full px-4 py-2 hover:bg-green hover:border-green hover:text-dark transition-colors ease-in-out duration-200">
-                Proyectos
+            <a href="mailto:tonnigt22@gmail.com" class=" rounded-full px-4 py-2 bg-blue hover:text-dark transition-colors ease-in-out duration-200 opacity-0">¡Pide la tuya!</a>
+            <a href="#projects" class="flex items-center border-white hover:text-blue transition-colors ease-in-out duration-200 opacity-0">
+                Ver ejemplos
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevrons-down-icon lucide-chevrons-down animate-pulse">
                     <path d="m7 6 5 5 5-5"/>
                     <path d="m7 13 5 5 5-5"/>
                 </svg>
             </a>
         </div>
-    </div>
+    </main>
+
+    <img src="/pc.webp" alt="pc landing page" class="w-full self-center justify-self-center">
 </section>
+
+<style>
+    main h1{
+        animation: fadeInDown .5s ease-in-out forwards;
+        animation-delay: 0.5s; 
+    }
+    main h2{
+        animation: fadeInDown .5s ease-in-out forwards;
+        animation-delay: 0.75s;
+    }
+    main div a{
+        animation: fadeInDown .5s ease-in-out forwards;
+        animation-delay: 1s;
+    }
+
+    @keyframes float{
+        0% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+        100% { transform: translateY(0); }
+    }
+
+    img{
+        animation: float 3s ease-in-out infinite;
+    }
+</style>
