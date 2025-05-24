@@ -1,5 +1,7 @@
 ---
 import '@styles/global.css';
+// Supports weights 100-900
+import '@fontsource-variable/inter';
 ---
 
 <!doctype html>
@@ -7,12 +9,10 @@ import '@styles/global.css';
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<title>Orbitas</title>
+		<link rel="icon" type="image/webp" href="/favicon.webp" />
+		<title>PixelNest | Experiencias digitales inolvidables</title>
 		<!-- Fonts -->
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap" rel="stylesheet">
+		<link href="https://api.fontshare.com/v2/css?f[]=clash-display@1&display=swap" rel="stylesheet">
 	</head>
 	<body>
 		<slot />
@@ -24,54 +24,14 @@ import '@styles/global.css';
 		color-scheme: light dark;
 		
 		/*Colors*/
-		--dark: #0D0D0D;
-		--white: #F5F5F5;
-		--purple: #9F7AEA;
-		--pink: #E91E63;
-		--green: #00FFC3;
+		--dark: #0F172A;
+		--white: #F1F5F9;
+		--gray: #94A3B8;
+		--blue: #38BDF8;
 
 		/*Fonts*/
-		--primary-font: "Sora", sans-serif;
-		--secondary-font: "Inter", sans-serif;
-		--tertiary-font: "Space Mono", monospace;
-
-		.sora-<uniquifier> {
-			font-family: "Sora", sans-serif;
-			font-optical-sizing: auto;
-			font-weight: <weight>;
-			font-style: normal;
-		}
-
-		.inter-<uniquifier> {
-			font-family: "Inter", sans-serif;
-			font-optical-sizing: auto;
-			font-weight: <weight>;
-			font-style: normal;
-		}
-
-		.space-mono-regular {
-			font-family: "Space Mono", monospace;
-			font-weight: 400;
-			font-style: normal;
-		}
-
-		.space-mono-bold {
-			font-family: "Space Mono", monospace;
-			font-weight: 700;
-			font-style: normal;
-		}
-
-		.space-mono-regular-italic {
-			font-family: "Space Mono", monospace;
-			font-weight: 400;
-			font-style: italic;
-		}
-
-		.space-mono-bold-italic {
-			font-family: "Space Mono", monospace;
-			font-weight: 700;
-			font-style: italic;
-			}
+		--primary-font: 'Clash Display', sans-serif;;
+		--secondary-font: 'Inter Variable', sans-serif;
 	}
 
 	* { margin: 0; padding: 0; }
@@ -94,9 +54,14 @@ import '@styles/global.css';
 	a { text-decoration: none; color: inherit; }
 	ul, ol { list-style: none; }
 	*::selection {
-        background-color: var(--purple);
+        background-color: var(--blue);
         color: var(--dark);
     }
+
+	@keyframes fadeInDown{
+		from { opacity: 0;transform: translateY(-20px); }
+		to { opacity: 1; transform: translateY(0); }
+	}
 
 	/* @media (prefers-color-scheme: light) {
 		:root {

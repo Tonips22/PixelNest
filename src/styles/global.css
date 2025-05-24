@@ -4,12 +4,10 @@
     /*Colors*/
     --color-dark: var(--dark);
     --color-white: var(--white);
-    --color-pink: var(--pink);
-    --color-green: var(--green);
-    --color-purple: var(--purple);
+    --color-blue: var(--blue);
+    --color-gray: var(--gray);
 
     /*Fonts*/
     --font-primary: var(--primary-font);
     --font-secondary: var(--secondary-font);
-    --font-tertiary: var(--tertiary-font);
 }
