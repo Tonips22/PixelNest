@@ -1,8 +1,166 @@
 ---
-
 ---
-
 <header class="sticky top-0 left-0 w-full p-4 flex items-center justify-between bg-dark z-50">
+    <a href="/">
+        <img src="/logo.webp" alt="PixelNest logo" class="w-38 object-cover">
+    </a>
+    
+    <nav class="hidden md:flex items-center gap-4 uppercase text-xs">
+        <a href="#services" class="text-white hover:text-blue transition-colors ease-in-out duration-200 font-secondary">Home</a>
+        <a href="#services" class="text-white hover:text-blue transition-colors ease-in-out duration-200 font-secondary">Servicios</a>
+        <a href="#projects" class="text-white hover:text-blue transition-colors ease-in-out duration-200 font-secondary">Proyectos</a>
+        <a href="#process" class="text-white hover:text-blue transition-colors ease-in-out duration-200 font-secondary">Proceso</a>
+        <a href="#contact" class="text-white hover:text-blue transition-colors ease-in-out duration-200 font-secondary">Contacto</a>
+    </nav>
+    <a href="visibee.es" class="hidden md:block text-xs uppercase text-white bg-blue px-4 py-2 rounded-full hover:text-dark transition-colors ease-in-out duration-200 font-secondary font-bold text-center">
+        Pide tu landing
+    </a>
+
+    <i class="md:hidden cursor-pointer menu" id="menu-toggle">
+        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu-icon lucide-menu text-white"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+    </i>
+
+    <aside class="media-menu fixed flex flex-col justify-center h-screen bg-dark top-0 right-0 w-full p-4 gap-8 hidden">
+        <i class="close self-end text-white cursor-pointer absolute top-4 right-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x-icon lucide-x"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+        </i>
+    
+        <nav class="flex flex-col items-center gap-4 uppercase text-md font-bold">
+            <a href="/" class="text-white hover:text-blue transition-colors ease-in-out duration-200 font-secondary">Home</a>
+            <a href="#services" class="text-white hover:text-blue transition-colors ease-in-out duration-200 font-secondary">Servicios</a>
+            <a href="#projects" class="text-white hover:text-blue transition-colors ease-in-out duration-200 font-secondary">Proyectos</a>
+            <a href="#process" class="text-white hover:text-blue transition-colors ease-in-out duration-200 font-secondary">Proceso</a>
+            <a href="#contact" class="text-white hover:text-blue transition-colors ease-in-out duration-200 font-secondary">Contacto</a>
+        </nav>
+
+        <a href="visibee.es" class="text-xs uppercase text-white bg-blue px-4 py-2 rounded-full hover:text-dark transition-colors ease-in-out duration-200 font-secondary font-bold text-center self-center">
+            Pide tu landing
+        </a>
+    </aside>
+</header>
+
+<style>
+
+    header{
+        animation: fadeInDown 0.5s ease-in-out;
+    }
+
+    @keyframes slideIn {
+        0% {
+            transform: translateY(-100%);
+        }
+        100% {
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes slideOut {
+        0% {
+            transform: translateY(0);
+        }
+        100% {
+            transform: translateY(-100%);
+        }
+    }
+
+    /* Estado inicial del menú */
+    .media-menu {
+        transform: translateY(-100%);
+        transition: transform 0.2s ease-in-out;
+    }
+
+    /* Clases para animar */
+    .slide-in {
+        animation: slideIn 0.2s forwards;
+    }
+
+    .slide-out {
+        animation: slideOut 0.2s forwards;
+    }
+
+    @keyframes slideDown {
+        from {
+            top: -120px;
+        }
+        to {
+            top: 0;
+        }
+    }
+
+    @keyframes slideUp {
+        from {
+            top: 0;
+        }
+        to {
+            top: -120px;
+        }
+    }
+
+    .header-hidden {
+        animation: slideUp 0.5s forwards;
+    }
+
+    .header-visible {
+        animation: slideDown 0.5s forwards;
+    }
+
+</style>
+
+<script>
+
+    let ultimaPosicionScroll = window.pageYOffset;
+    window.addEventListener('scroll', function() {
+        const header = document.querySelector('header') as HTMLElement;
+        let posicionActualScroll = window.pageYOffset;
+        
+        if (ultimaPosicionScroll < posicionActualScroll) {
+            // Scroll hacia abajo
+            header.classList.remove('header-visible');
+            header.classList.add('header-hidden');
+        } else {
+            // Scroll hacia arriba
+            header.classList.remove('header-hidden');
+            header.classList.add('header-visible');
+        }
+        ultimaPosicionScroll = posicionActualScroll;
+    });
+
+    
+    const menu = document.querySelector('.menu') as HTMLElement;
+    const mediaMenu = document.querySelector('.media-menu') as HTMLElement;
+    const close = document.querySelector('.close') as HTMLElement;
+    const body = document.querySelector('body') as HTMLElement;
+    const allLinks = mediaMenu.querySelectorAll('a') as NodeListOf<HTMLAnchorElement>;
+
+    menu.addEventListener('click', () => {
+        mediaMenu.classList.remove('hidden', 'slide-out');
+        mediaMenu.classList.add('slide-in');
+        body.style.overflow = 'hidden';
+    });
+
+    close.addEventListener('click', closeMenu);
+
+    document.addEventListener('click', (e) => {
+        if (!mediaMenu.contains(e.target) && !menu.contains(e.target)) {
+            closeMenu();
+        }
+    });
+
+    allLinks.forEach(link => {
+        link.addEventListener('click', closeMenu);
+    });
+
+    function closeMenu() {
+        mediaMenu.classList.remove('slide-in');
+        mediaMenu.classList.add('slide-out');
+        body.style.overflow = 'auto';
+        setTimeout(() => {
+            mediaMenu.classList.add('hidden');
+        }, 200); // debe coincidir con la duración de la animación
+    }
+</script>
+
+<!-- <header class="sticky top-0 left-0 w-full p-4 flex items-center justify-between bg-dark z-50">
     <a href="/">
         <img src="/logo.webp" alt="PixelNest logo" class="w-38 object-cover">
     </a>
@@ -23,5 +181,5 @@
     header{
         animation: fadeInDown 0.5s ease-in-out;
     }
-</style>
+</style> -->
 
