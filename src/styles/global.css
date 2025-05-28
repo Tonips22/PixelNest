@@ -6,6 +6,8 @@
     --color-white: var(--white);
     --color-blue: var(--blue);
     --color-gray: var(--gray);
+    --color-dark-blue: var(--dark-blue);
+
 
     /*Fonts*/
     --font-primary: var(--primary-font);
