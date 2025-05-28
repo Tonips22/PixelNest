@@ -71,11 +71,11 @@
 
     /* Clases para animar */
     .slide-in {
-        animation: slideIn 0.2s forwards;
+        animation: slideIn 1s forwards;
     }
 
     .slide-out {
-        animation: slideOut 0.2s forwards;
+        animation: slideOut 1s forwards;
     }
 
     @keyframes slideDown {
@@ -97,11 +97,11 @@
     }
 
     .header-hidden {
-        animation: slideUp 0.5s forwards;
+        animation: slideUp .5s forwards;
     }
 
     .header-visible {
-        animation: slideDown 0.5s forwards;
+        animation: slideDown .5s forwards;
     }
 
 </style>
@@ -156,30 +156,7 @@
         body.style.overflow = 'auto';
         setTimeout(() => {
             mediaMenu.classList.add('hidden');
-        }, 200); // debe coincidir con la duración de la animación
+        }, 1200); // debe coincidir con la duración de la animación
     }
 </script>
-
-<!-- <header class="sticky top-0 left-0 w-full p-4 flex items-center justify-between bg-dark z-50">
-    <a href="/">
-        <img src="/logo.webp" alt="PixelNest logo" class="w-38 object-cover">
-    </a>
-    
-    <nav class="flex items-center gap-4 uppercase text-xs">
-        <a href="#services" class="text-white hover:text-blue transition-colors ease-in-out duration-200 font-secondary">Home</a>
-        <a href="#services" class="text-white hover:text-blue transition-colors ease-in-out duration-200 font-secondary">Servicios</a>
-        <a href="#projects" class="text-white hover:text-blue transition-colors ease-in-out duration-200 font-secondary">Proyectos</a>
-        <a href="#process" class="text-white hover:text-blue transition-colors ease-in-out duration-200 font-secondary">Proceso</a>
-        <a href="#contact" class="text-white hover:text-blue transition-colors ease-in-out duration-200 font-secondary">Contacto</a>
-    </nav>
-    <a href="visibee.es" class="text-xs uppercase text-white bg-blue px-4 py-2 rounded-full hover:text-dark transition-colors ease-in-out duration-200 font-secondary font-bold">
-        Pide tu landing
-    </a>
-</header>
-
-<style>
-    header{
-        animation: fadeInDown 0.5s ease-in-out;
-    }
-</style> -->
 
