@@ -1,0 +1,40 @@
+---
+import Card from "@components/Card.astro"
+---
+
+<section class=" min-h-screen flex flex-col gap-8 p-4 md:p-8" id="projects">
+    <header class="flex flex-col gap-4">
+        <h1 class="text-[23px] md:text-4xl lg:text-6xl font-bold font-primary text-center">Proyectos recientes</h1>
+        <h2 class="text-sm lg:text-3xl font-bold font-secondary text-gray text-pretty text-center">Así ayudamos a marcas como la tuya a brillar</h2>
+    </header>
+
+    <main class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <Card
+            title="Viventa"
+            description="Grow your business with confidence. We help you build a strong online presence."
+            image="/projects/project1.webp"
+        />
+        <Card
+            title="Neura"
+            description="Powerful solutions for your startup. We provide the tools you need to succeed."
+            image="/projects/project2.webp"
+        />
+        <Card
+            title="Lena Taylor"
+            description="Let's bring ypur vision to life. I create unique and inspiring works of art."
+            image="/projects/project3.webp"
+        />
+    </main>
+
+    <a href="visibee.es" class="text-xs uppercase text-white bg-blue px-4 py-2 rounded-full hover:text-dark transition-colors ease-in-out duration-200 font-secondary font-bold text-center self-center">
+            Ver más proyectos
+    </a>
+</section>
+
+<style>
+    h1, h2, article{
+        animation: fadeInUp both;
+        animation-timeline: view();
+        animation-range: entry 40% cover 50%;
+    }
+</style>

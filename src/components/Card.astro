@@ -1,0 +1,17 @@
+---
+const { title, image, description } = Astro.props;
+---
+
+<article class="group flex flex-col gap-8 px-4 py-8 bg-dark-blue rounded-lg hover:bg-blue transition-colors duration-200 cursor-pointer min-h-[500px]">
+    <img src={image} alt={title} class=" object-cover w-[300px] self-center group-hover:scale-110 transition-transform duration-200" />
+    <h3 class=" group-hover:text-dark transition-colors duration-200 font-bold font-primary text-white text-3xl text-center">{title}</h3>
+    <p class=" text-lg text-gray group-hover:text-dark-blue transition-colors duration-200">{description}</p>
+</article>
+
+<style>
+    article{
+        animation: fadeInUp both;
+        animation-timeline: view();
+        animation-range: entry 40% cover 50%;
+    }
+</style>
