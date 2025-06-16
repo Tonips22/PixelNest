@@ -1,0 +1,32 @@
+---
+const { avatar, name, role, description, stars } = Astro.props;
+
+const STARS = stars || 5;
+---
+
+<article class="bg-dark-blue p-8 rounded-xl flex flex-col gap-4 min-h-[250px]">
+  <div class="flex items-center justify-between gap-4">
+    <!-- Avatar opcional -->
+     <div class="flex items-center gap-4">
+        <img src={avatar} alt={name} class="w-12 h-12 rounded-full object-cover border-2 border-blue">
+
+        <div>
+        <h3 class="font-semibold text-white"> {name} </h3>
+        <p class="text-sm text-gray"> {role} </p>
+        </div>
+     </div>
+
+    <div class=" text-blue text-2xl justify-self-end">
+    {
+        Array.from({ length: STARS }, (_, i) => (
+            <span class="inline-block">★</span>
+        ))
+    }
+  </div>
+  </div>
+
+  <!-- Cita del testimonio -->
+  <p class="italic text-lg text-white">
+    “{description}”
+  </p>
+</a>

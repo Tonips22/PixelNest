@@ -1,0 +1,62 @@
+---
+import Valoration from "@components/Valoration.astro"
+---
+
+<section class=" min-h-screen flex flex-col gap-8 p-4 md:p-8" id="projects">
+    <header class="flex flex-col gap-4">
+        <h1 class="text-[23px] md:text-4xl lg:text-6xl font-bold font-primary text-center">Opiniones de nuestros clientes</h1>
+        <h2 class="text-sm lg:text-3xl font-bold font-secondary text-gray text-pretty text-center">Lo que dicen quienes ya confiaron en PixelNest</h2>
+    </header>
+
+    <main class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <Valoration
+            avatar="/emp1.avif"
+            name="Juan Pérez"
+            role="Desarrollador Web"
+            description="PixelNest transformó mi idea en una web increíble. ¡Recomiendo sus servicios al 100%!"
+            stars={5}
+        />
+
+        <Valoration
+            avatar="/emp3.webp"
+            name="María López"
+            role="Diseñadora Gráfica"
+            description="El equipo de PixelNest es excepcional. Su atención al detalle y creatividad son insuperables."
+            stars={5}
+        />
+
+        <Valoration
+            avatar="/emp2.webp"
+            name="Carlos García"
+            role="Emprendedor"
+            description="Gracias a PixelNest, mi negocio online ha crecido exponencialmente. ¡Son los mejores!"
+            stars={5}
+        />
+
+        <Valoration
+            avatar="/emp6.jpeg"
+            name="Ana Torres"
+            role="Gerente de Marketing"
+            description="PixelNest entiende las necesidades de sus clientes y ofrece soluciones efectivas. ¡Muy satisfechos!"
+            stars={5}
+        />
+
+        <Valoration
+            avatar="/emp5.webp"
+            name="Luis Fernández"
+            role="Consultor IT"
+            description="La profesionalidad y dedicación de PixelNest son admirables. ¡Un placer trabajar con ellos!"
+            stars={5}
+
+        />
+
+        <Valoration
+            avatar="/emp4.webp"
+            name="Sofía Martínez"
+            role="Fotógrafa Profesional"
+            description="PixelNest capturó la esencia de mi trabajo en su web. ¡Estoy encantada con el resultado!"
+            stars={5}
+        />
+    </main>
+    
+</section>
